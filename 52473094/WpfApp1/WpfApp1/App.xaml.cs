@@ -1,5 +1,7 @@
 ﻿using System.Windows;
 
+using WpfApp1.DataServices;
+using WpfApp1.DataServices.Impl;
 using WpfApp1.ViewModels;
 
 namespace WpfApp1
@@ -16,7 +18,8 @@ namespace WpfApp1
 
         private async void App_Startup(object sender, StartupEventArgs e)
         {
-            var vm = new MainViewModel();
+            IUnitDataService svc = new FakeUnitDataService();
+            var vm = new MainViewModel(svc);
             MainWindow = new Views.MainWindow()
             {
                 DataContext = vm,

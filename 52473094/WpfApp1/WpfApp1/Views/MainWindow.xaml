@@ -10,13 +10,14 @@
         d:DataContext="{d:DesignInstance Type=vm:MainViewModel, IsDesignTimeCreatable=False}"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
         <DataTemplate x:Key="FirstTemplate" DataType="{x:Type models:Unit}">
             <Grid>
                 <StackPanel>
                     <Border x:Name="SomeBorder">
-                        <TextBox x:Name="WantedTextBox" Text="{Binding Path=Material, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBox x:Name="WantedTextBox" Text="{Binding Material, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </Border>
-                    <Button Content="Update"/>
+                    <Button Content="Update" CommandParameter="{Binding}" Command="{Binding Path=DataContext.UpdateObject, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
                 </StackPanel>
             </Grid>
         </DataTemplate>
@@ -26,6 +27,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+
         <ListBox x:Name="MyListBox" Grid.Column="0"
              ItemsSource="{Binding Objects}"
              SelectedItem="{Binding SelectedObject}" />
@@ -34,5 +36,8 @@
                 <ContentControl x:Name="FirstContent" Content="{Binding SelectedObject}" ContentTemplate="{StaticResource FirstTemplate}"/>
             </TabItem>
         </TabControl>
+
+        <Border Grid.ColumnSpan="2" Background="Red" Opacity="0.5" Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay}"/>
+
     </Grid>
 </Window>

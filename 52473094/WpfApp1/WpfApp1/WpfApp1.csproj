@@ -59,6 +59,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DataServices\Impl\FakeUnitDataService.cs" />
+    <Compile Include="DataServices\IUnitDataService.cs" />
     <Compile Include="Models\Unit.cs" />
     <Compile Include="ViewModels\Base\ViewModelBase.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -101,6 +103,9 @@
   <ItemGroup>
     <PackageReference Include="ReactiveUI.WPF">
       <Version>8.7.2</Version>
+    </PackageReference>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.5.231</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />

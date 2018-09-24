@@ -1,8 +1,21 @@
-﻿namespace WpfApp1.Models
+﻿using ReactiveUI;
+
+namespace WpfApp1.Models
 {
-    public class Unit
+    public class Unit : ReactiveObject
     {
-        public int Id { get; set; }
-        public string Material { get; set; }
+        private int _id;
+        private string _material;
+
+        public int Id
+        {
+            get => _id;
+            set => this.RaiseAndSetIfChanged(ref _id, value);
+        }
+        public string Material
+        {
+            get => _material;
+            set => this.RaiseAndSetIfChanged(ref _material, value);
+        }
     }
 }
