@@ -12,6 +12,7 @@
     <wpfx:BusyIndicator IsBusy="{Binding IsBusy}" BusyContent="Loading Data ...">
         <Grid>
             <Button Content="Reload" Command="{Binding ReloadDataCommand}" HorizontalAlignment="Left" Margin="85,69,0,0" VerticalAlignment="Top" Width="75"/>
+            <CheckBox Content="ContinueOnCapturedContext" IsChecked="{Binding ContinueOnCapturedContext}" HorizontalAlignment="Left" Margin="85,31,0,0" VerticalAlignment="Top"/>
         </Grid>
     </wpfx:BusyIndicator>
 </Window>

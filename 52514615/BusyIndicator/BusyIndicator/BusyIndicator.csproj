@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Services\Fake\FakeFooService.cs" />
+    <Compile Include="Services\IFooService.cs" />
     <Compile Include="Utils\ObservableObject.cs" />
     <Compile Include="ViewModels\Base\ViewModelBase.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

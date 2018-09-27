@@ -1,7 +1,7 @@
-﻿using BusyIndicator.ViewModels;
+﻿using BusyIndicator.Services.Fake;
+using BusyIndicator.ViewModels;
 using BusyIndicator.Views;
 
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace BusyIndicator
@@ -18,7 +18,8 @@ namespace BusyIndicator
 
         private async void App_Startup(object sender, StartupEventArgs e)
         {
-            var mainVM = new MainViewModel();
+            var svc = new FakeFooService();
+            var mainVM = new MainViewModel(svc);
             var mainView = new MainWindow()
             {
                 DataContext = mainVM,
