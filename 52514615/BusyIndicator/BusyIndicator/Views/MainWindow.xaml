@@ -5,10 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BusyIndicator.Views"
         xmlns:vm="clr-namespace:BusyIndicator.ViewModels"
+        xmlns:wpfx="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=vm:MainViewModel, IsDesignTimeCreatable=False}"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <wpfx:BusyIndicator IsBusy="{Binding IsBusy}" BusyContent="Loading Data ...">
+        <Grid>
+            <Button Content="Reload" Command="{Binding ReloadDataCommand}" HorizontalAlignment="Left" Margin="85,69,0,0" VerticalAlignment="Top" Width="75"/>
+        </Grid>
+    </wpfx:BusyIndicator>
 </Window>
