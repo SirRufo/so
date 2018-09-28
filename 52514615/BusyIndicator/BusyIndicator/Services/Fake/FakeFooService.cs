@@ -13,5 +13,10 @@ namespace BusyIndicator.Services.Fake
                 Thread.Sleep(250);
             }
         }
+
+        public Task InitializeAsync(object parameter)
+        {
+            return Task.Delay(250);
+        }
     }
 }

@@ -2,7 +2,12 @@
 
 namespace BusyIndicator.Services
 {
-    public interface IFooService
+    public interface IAsyncInitialization
+    {
+        Task InitializeAsync(object parameter);
+    }
+
+    public interface IFooService : IAsyncInitialization
     {
         Task DoSomeWorkAsync(bool continueOnCapturedContext);
     }
