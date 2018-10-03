@@ -39,5 +39,10 @@ namespace WPFAsyncProcess.ViewModels
             LogLines = await _fileProcessor.ProcessFilesAsync();
             IsBusy = false;
         }
+
+        public override Task InitializeAsync(object parameter)
+        {
+            return ProcessFilesCommandExecuteAsync();
+        }
     }
 }
