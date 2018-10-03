@@ -1,9 +1,4 @@
-﻿using System.Threading.Tasks;
-using System.Windows;
-
-using WPFAsyncProcess.Services.Fake;
-using WPFAsyncProcess.ViewModels;
-using WPFAsyncProcess.Views;
+﻿using System.Windows;
 
 namespace WPFAsyncProcess
 {
@@ -12,24 +7,17 @@ namespace WPFAsyncProcess
     /// </summary>
     public partial class App : Application
     {
+        private CompositionRoot _root;
+
         public App()
         {
+            _root = new CompositionRoot(this);
             Startup += App_Startup;
         }
 
         private async void App_Startup(object sender, StartupEventArgs e)
         {
-            var mainVM = new MainViewModel(new FakeFileProcessor());
-            var mainView = new MainWindow
-            {
-                DataContext = mainVM,
-            };
-            MainWindow = mainView;
-
-            await Task.Yield();
-
-            mainView.Show();
-            await mainVM.InitializeAsync(null);
+            await _root.InitializeAsync();
         }
     }
 }

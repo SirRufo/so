@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="App.CompositionRoot.cs" />
     <Compile Include="Models\LogLine.cs" />
     <Compile Include="Services\Fake\FakeFileProcessor.cs" />
     <Compile Include="Services\IFileProcessor.cs" />
@@ -106,6 +107,9 @@
     </PackageReference>
     <PackageReference Include="ReactiveUI.WPF">
       <Version>8.7.2</Version>
+    </PackageReference>
+    <PackageReference Include="Unity">
+      <Version>5.8.11</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
