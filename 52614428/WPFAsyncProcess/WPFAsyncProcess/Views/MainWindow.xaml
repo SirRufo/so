@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFAsyncProcess.Views"
         xmlns:vm="clr-namespace:WPFAsyncProcess.ViewModels"
+        xmlns:dvm="clr-namespace:WPFAsyncProcess.ViewModels.Design"
         xmlns:xwpt="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        d:DataContext="{d:DesignInstance Type=vm:MainViewModel,IsDesignTimeCreatable=False}"
+        d:DataContext="{d:DesignInstance Type=dvm:MainViewModelDesign,IsDesignTimeCreatable=True}"
         Title="MainWindow" Height="450" Width="800">
     <xwpt:BusyIndicator IsBusy="{Binding IsBusy}" BusyContent="Process Files...">
         <Grid>

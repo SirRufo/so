@@ -59,6 +59,7 @@
     <Compile Include="Services\Fake\FakeFileProcessor.cs" />
     <Compile Include="Services\IFileProcessor.cs" />
     <Compile Include="ViewModels\Base\ViewModelBase.cs" />
+    <Compile Include="ViewModels\Design\MainViewModelDesign.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
