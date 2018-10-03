@@ -4,9 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFAsyncProcess.Views"
+        xmlns:vm="clr-namespace:WPFAsyncProcess.ViewModels"
+        xmlns:xwpt="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:MainViewModel,IsDesignTimeCreatable=False}"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <xwpt:BusyIndicator IsBusy="{Binding IsBusy}" BusyContent="Process Files...">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Process Files" Command="{Binding ProcessFilesCommand}"/>
+            </StackPanel>
+            
+            <ListBox Grid.Row="1"  ItemsSource="{Binding LogLines}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Value}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </xwpt:BusyIndicator>
 </Window>

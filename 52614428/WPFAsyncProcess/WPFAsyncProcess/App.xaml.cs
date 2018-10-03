@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System.Windows;
 
+using WPFAsyncProcess.Services.Fake;
 using WPFAsyncProcess.ViewModels;
 using WPFAsyncProcess.Views;
 
@@ -18,7 +19,7 @@ namespace WPFAsyncProcess
 
         private async void App_Startup(object sender, StartupEventArgs e)
         {
-            var mainVM = new MainViewModel();
+            var mainVM = new MainViewModel(new FakeFileProcessor());
             var mainView = new MainWindow
             {
                 DataContext = mainVM,

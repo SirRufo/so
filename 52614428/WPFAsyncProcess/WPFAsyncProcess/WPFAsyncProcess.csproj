@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\LogLine.cs" />
+    <Compile Include="Services\Fake\FakeFileProcessor.cs" />
+    <Compile Include="Services\IFileProcessor.cs" />
     <Compile Include="ViewModels\Base\ViewModelBase.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
@@ -97,6 +100,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit">
+      <Version>3.4.0</Version>
+    </PackageReference>
     <PackageReference Include="ReactiveUI.WPF">
       <Version>8.7.2</Version>
     </PackageReference>
