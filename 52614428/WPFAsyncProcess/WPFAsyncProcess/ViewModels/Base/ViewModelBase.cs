@@ -13,7 +13,7 @@ namespace WPFAsyncProcess.ViewModels.Base
             protected set => this.RaiseAndSetIfChanged(ref isBusy, value);
         }
 
-        public Task InitializeAsync(object parameter)
+        public virtual Task InitializeAsync(object parameter)
         {
             return Task.CompletedTask;
         }
