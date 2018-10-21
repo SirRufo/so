@@ -11,5 +11,21 @@
     </Window.CommandBindings>
     <Grid>
         <Button Content="Save" Command="local:CustomCommand.Save" HorizontalAlignment="Left" Margin="131,157,0,0" VerticalAlignment="Top" Width="75"/>
+
+        <Button Content="Test 1" Command="local:CustomCommand.Test" HorizontalAlignment="Left" Margin="223,157,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Test 2" Command="local:CustomCommand.Test" CommandTarget="{Binding ElementName=TestControl}" HorizontalAlignment="Left" Margin="303,157,0,0" VerticalAlignment="Top" Width="75"/>
+
+        <ContentControl Name="TestControl" HorizontalAlignment="Left" Height="125" Margin="223,182,0,0" VerticalAlignment="Top" Width="224">
+            <ContentControl.CommandBindings>
+                <CommandBinding Command="local:CustomCommand.Test" Executed="CommandBinding_Executed_1"/>
+            </ContentControl.CommandBindings>
+            <StackPanel>
+                <Label Content="Firstname:"/>
+                <TextBox/>
+                <Label Content="Lastname:"/>
+                <TextBox/>
+            </StackPanel>
+        </ContentControl>
+
     </Grid>
 </Window>
